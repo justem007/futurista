@@ -1,0 +1,2 @@
+<a href="<% route('categoria.edit',['id'=>$categoria->id]) %>"> Editar</a> |
+<a href="<% route('categoria.destroy',['id'=>$categoria->id]) %>">Destroy </a>
