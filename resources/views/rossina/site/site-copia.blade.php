@@ -122,26 +122,78 @@
       </div>
       <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
       <nav class="b-top-nav f-top-nav b-right j-top-nav">
- <ul class="b-top-nav__1level_wrap">
-
-
+          <ul class="b-top-nav__1level_wrap">
     <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b"><a href="/"><i class="fa fa-home b-menu-1level-ico"></i>Home <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
         <div class="b-top-nav__dropdomn">
             <ul class="b-top-nav__2level_wrap">
-                <li class="b-top-nav__2level_title f-top-nav__2level_title is-active-top-nav__2level-title">Página Principal</li>
+                <li class="b-top-nav__2level_title f-top-nav__2level_title is-active-top-nav__2level-title">página inicial</li>
             </ul>
         </div>
     </li>
-     @foreach($modelMenu as $menu)
-         <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-             <a href="<% $menu->link_menu %>"><i class="fa fa-folder-open b-menu-1level-ico"></i><% $menu->nome_menu %><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-             <div class="b-top-nav__dropdomn">
-                 <ul class="b-top-nav__2level_wrap">
-                     <li class="b-top-nav__2level_title f-top-nav__2level_title"><% $menu->descricao_menu %></li>
-                 </ul>
-             </div>
-         </li>
-   @endforeach
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+        <a href="loja"><i class="fa fa-folder-open b-menu-1level-ico"></i>Loja<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+        <div class="b-top-nav__dropdomn">
+            <ul class="b-top-nav__2level_wrap">
+                <li class="b-top-nav__2level_title f-top-nav__2level_title">nossa loja virtual</li>
+            </ul>
+        </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+        <a href="estamparia_digital"><i class="fa fa-picture-o b-menu-1level-ico"></i>Estamparia Digital <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+        <div class="b-top-nav__dropdomn">
+            <ul class="b-top-nav__2level_wrap">
+                <li class="b-top-nav__2level_title f-top-nav__2level_title">serviços de estamparia digital</li>
+            </ul>
+        </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+        <a href="../camisetas"><i class="fa fa-code b-menu-1level-ico"></i>Camisetas <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+        <div class="b-top-nav__dropdomn">
+            <ul class="b-top-nav__2level_wrap">
+                <li class="b-top-nav__2level_title f-top-nav__2level_title">nossas camisetas</li>
+            </ul>
+        </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+         <a href="../tecidos"><i class="fa fa-code b-menu-1level-ico"></i>Tecidos <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+         <div class="b-top-nav__dropdomn">
+             <ul class="b-top-nav__2level_wrap">
+                 <li class="b-top-nav__2level_title f-top-nav__2level_title">nossos tecidos</li>
+             </ul>
+         </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+         <a href="../sobre"><i class="fa fa-code b-menu-1level-ico"></i>Sobre nós <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+         <div class="b-top-nav__dropdomn">
+             <ul class="b-top-nav__2level_wrap">
+                 <li class="b-top-nav__2level_title f-top-nav__2level_title">conheça nossa empresa</li>
+             </ul>
+         </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+         <a href="../blog"><i class="fa fa-code b-menu-1level-ico"></i>Blog <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+         <div class="b-top-nav__dropdomn">
+             <ul class="b-top-nav__2level_wrap">
+                 <li class="b-top-nav__2level_title f-top-nav__2level_title">novidades de moda e estamparia digital</li>
+             </ul>
+         </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+        <a href="../contatos"><i class="fa fa-folder-open b-menu-1level-ico"></i>Contatos<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+        <div class="b-top-nav__dropdomn">
+            <ul class="b-top-nav__2level_wrap">
+                <li class="b-top-nav__2level_title f-top-nav__2level_title">Nossos Contatos</li>
+            </ul>
+        </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+        <a href="../faqs"><i class="fa fa-folder-open b-menu-1level-ico"></i>FAQs<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+        <div class="b-top-nav__dropdomn">
+             <ul class="b-top-nav__2level_wrap">
+                 <li class="b-top-nav__2level_title f-top-nav__2level_title">tire suas dúvidas</li>
+             </ul>
+        </div>
+    </li>
 </ul>
 
       </nav>

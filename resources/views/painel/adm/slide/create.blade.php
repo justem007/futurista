@@ -1,6 +1,6 @@
 @extends('painel.pages.template')
 
-@section('slidecriar')
+@section('slide')
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">

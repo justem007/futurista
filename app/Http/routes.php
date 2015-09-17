@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -22,8 +11,8 @@ Route::controllers([
 //    return view('welcome');
 //});
 
-Route::get('/', 'SiteRossinaController@index');
-    Route::get('loja', 'SiteRossinaController@loja');
+Route::get('/', ['as' => '/', 'uses' => 'SiteRossinaController@index']);
+    Route::get('loja',['as' => 'loja', 'uses' => 'SiteRossinaController@loja']);
     Route::get('estamparia_digital', 'SiteRossinaController@estamparia');
     Route::get('camisetas', 'SiteRossinaController@camisetas');
     Route::get('tecidos', 'SiteRossinaController@tecidos');
@@ -54,18 +43,48 @@ Route::group(['prefix' => 'admin', 'where'=>['id'=>'[0-9]+']], function(){
     Route::get('tables', 'PainelController@tables');
     Route::get('typography', 'PainelController@typography');
 
-    Route::get('slide',['as'        => 'slide', 'uses'         => 'SlideController@index']);
-    Route::get('slidecriar',['as'   => 'slidecriar', 'uses'    => 'SlideController@create']);
-    Route::post('slide',['as'       => 'slide.store', 'uses'   => 'SlideController@store']);
-    Route::get('slide/{id}/edit',['as'    => 'slide.edit', 'uses'    => 'SlideController@edit']);
-    Route::post('{id}/update',['as' => 'slide.update', 'uses'  => 'SlideController@update']);
-    Route::get('{id}/destroy',['as' => 'slide.destroy', 'uses' => 'SlideController@destroy']);
+    Route::group(['prefix' => 'slide'], function(){
+        Route::get('',['as'        => 'slide', 'uses'         => 'SlideController@index']);
+        Route::get('slidecriar',['as'   => 'slidecriar', 'uses'    => 'SlideController@create']);
+        Route::post('',['as'       => 'slide.store', 'uses'   => 'SlideController@store']);
+        Route::get('{id}/edit',['as'    => 'slide.edit', 'uses'    => 'SlideController@edit']);
+        Route::post('{id}/update',['as' => 'slide.update', 'uses'  => 'SlideController@update']);
+        Route::get('{id}/destroy',['as' => 'slide.destroy', 'uses' => 'SlideController@destroy']);
+    });
 
-    Route::get('categorias',['as' => 'categorias', 'uses' => 'CategoriasController@index']);
-    Route::get('categoriascriar',['as' => 'categoriascriar', 'uses' => 'CategoriasController@create']);
-    Route::post('categorias',['as' => 'categoria.store', 'uses' => 'CategoriasController@store']);
-    Route::get('categorias/{id}/edit',['as' => 'categoria.edit', 'uses' => 'CategoriasController@edit']);
-    Route::post('/{id}/update',['as' => 'categoria.update', 'uses' => 'CategoriasController@update']);
-    Route::get('/{id}/destroy',['as' => 'categoria.destroy', 'uses' => 'CategoriasController@destroy']);
+    Route::group(['prefix' => 'categorias'], function(){
+            Route::get('',['as' => 'categorias', 'uses' => 'CategoriasController@index']);
+            Route::get('categoriascriar',['as' => 'categoriascriar', 'uses' => 'CategoriasController@create']);
+            Route::post('',['as' => 'categoria.store', 'uses' => 'CategoriasController@store']);
+            Route::get('{id}/edit',['as' => 'categoria.edit', 'uses' => 'CategoriasController@edit']);
+            Route::post('{id}/update',['as' => 'categoria.update', 'uses' => 'CategoriasController@update']);
+            Route::get('{id}/destroy',['as' => 'categoria.destroy', 'uses' => 'CategoriasController@destroy']);
+    });
 
+    Route::group(['prefix' => 'imagem'], function(){
+            Route::get('', ['as' => 'imagem', 'uses' => 'ImagemController@index']);
+            Route::get('imagemcriar', ['as' => 'imagemcriar', 'uses' => 'ImagemController@create']);
+            Route::post('', ['as' => 'imagem.store', 'uses' => 'ImagemController@store']);
+            Route::get('{id}/edit', ['as' => 'imagem.edit', 'uses' => 'ImagemController@edit']);
+            Route::post('{id}/update', ['as' => 'imagem.update', 'uses' => 'ImagemController@update']);
+            Route::get('{id}/destroy', ['as' => 'imagem.destroy', 'uses' => 'ImagemController@destroy']);
+    });
+
+    Route::group(['prefix' => 'menu'], function() {
+        Route::get('', ['as' => 'menu', 'uses' => 'MenuController@index']);
+        Route::get('menucriar', ['as' => 'menucriar', 'uses' => 'MenuController@create']);
+        Route::post('', ['as' => 'menu.store', 'uses' => 'MenuController@store']);
+        Route::get('{id}/edit', ['as' => 'menu.edit', 'uses' => 'MenuController@edit']);
+        Route::post('{id}/update', ['as' => 'menu.update', 'uses' => 'MenuController@update']);
+        Route::get('{id}/destroy', ['as' => 'menu.destroy', 'uses' => 'MenuController@destroy']);
+    });
+
+    Route::group(['prefix' => 'blocoum'], function(){
+            Route::get('', ['as' => 'blocoum', 'uses' => 'BlocoUmController@index']);
+            Route::get('blocoumucriar', ['as' => 'blocoumcriar', 'uses' => 'BlocoUmController@create']);
+            Route::post('', ['as' => 'blocoum.store', 'uses' => 'BlocoUmController@store']);
+            Route::get('{id}/edit', ['as' => 'blocoum.edit', 'uses' => 'BlocoUmController@edit']);
+            Route::post('{id}/update', ['as' => 'blocoum.update', 'uses' => 'BlocoUmController@update']);
+            Route::get('{id}/destroy', ['as' => 'blocoum.destroy', 'uses' => 'BlocoUmController@destroy']);
+    });
 });

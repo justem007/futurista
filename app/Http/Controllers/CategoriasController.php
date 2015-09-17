@@ -2,7 +2,6 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Rossina\Categorias;
 use Rossina\Http\Requests;
 use Rossina\Http\Requests\CategoriasRequest;

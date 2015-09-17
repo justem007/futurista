@@ -2,7 +2,7 @@
     <div class="b-slidercontainer b-slider">
         <div class="j-fullscreenslider j-arr-hide">
             <ul>
-              @foreach($slides as $slide)
+              @foreach($modelSlide as $slide)
                 <li data-transition="slotfade-vertical" data-slotamount="7" >
                     <div class="tp-bannertimer"></div>
                     <img data-retina src="img/slider/rossina-estamparia-servicos.png">

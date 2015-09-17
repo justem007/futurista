@@ -3,97 +3,135 @@
 namespace Rossina\Http\Controllers;
 
 use Rossina\Http\Requests;
+use Rossina\Menu;
+use Rossina\SiteBlocoUm;
 use Rossina\Slide;
 
 class SiteRossinaController extends Controller
 {
-    private $slideModel;
+    private $modelSlide;
+    private $modelMenu;
+    private $blocoumModel;
 
-    public function __construct(Slide $slideModel)
+    public function __construct(Slide $modelSlide, Menu $modelMenu, SiteBlocoUm $blocoumModel)
     {
-        $this->slideModel = $slideModel;
+        $this->modelSlide = $modelSlide;
+        $this->modelMenu = $modelMenu;
+        $this->blocoumModel = $blocoumModel;
     }
 
     public function index()
     {
-        $slides = $this->slideModel->all();
+        $modelSlide   = $this->modelSlide->all();
+        $modelMenu    = $this->modelMenu->all();
+        $blocoumModel = $this->blocoumModel->all();
 
-        return view('rossina.site.index', compact('slides'));
+        return view('rossina.site.index', compact('modelSlide', 'modelMenu', 'blocoumModel'));
     }
 
     public function loja()
     {
-        return view('rossina.loja.loja');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.loja.loja', compact('modelMenu'));
     }
 
     public function estamparia()
     {
-        return view('rossina.estamparia.estamparia_digital');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.estamparia.estamparia_digital', compact('modelMenu'));
     }
 
     public function camisetas()
     {
-        return view('rossina.camisetas.camiseta');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.camisetas.camiseta', compact('modelMenu'));
     }
 
     public function tecidos()
     {
-        return view('rossina.tecidos.tecidos_digital');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.tecidos.tecidos_digital', compact('modelMenu'));
     }
 
     public function sobre()
     {
-        return view('rossina.sobre.sobre');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.sobre.sobre', compact('modelMenu'));
     }
 
     public function blog()
     {
-        return view('rossina.blog.blog');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.blog.blog', compact('modelMenu'));
     }
 
     public function contatos()
     {
-        return view('rossina.contatos.contatos');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.contatos.contatos', compact('modelMenu'));
     }
 
     public function faqs()
     {
-        return view('rossina.faqs.faqs');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.faqs.faqs', compact('modelMenu'));
     }
 
     public function compras()
     {
-        return view('rossina.loja.loja_compras');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.loja.loja_compras', compact('modelMenu'));
     }
 
     public function checkout()
     {
-        return view('rossina.loja.loja_checkout_page');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.loja.loja_checkout_page', compact('modelMenu'));
     }
 
     public function registrar()
     {
-        return view('rossina.registrar.registrar');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.registrar.registrar', compact('modelMenu'));
     }
 
     public function login()
     {
-        return view('rossina.login.login');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.login.login', compact('modelMenu'));
     }
 
     public function username()
     {
-        return view('rossina.login.username');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.login.username', compact('modelMenu'));
     }
 
     public function password()
     {
-        return view('rossina.login.password');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.login.password', compact('modelMenu'));
     }
 
     public function detalhe()
     {
-        return view('rossina.loja.produto_detalhe');
+        $modelMenu    = $this->modelMenu->all();
+
+        return view('rossina.loja.produto_detalhe', compact('modelMenu'));
     }
 }
 

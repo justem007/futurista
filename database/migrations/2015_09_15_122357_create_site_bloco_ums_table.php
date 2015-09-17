@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlidesTable extends Migration
+class CreateSiteBlocoUmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateSlidesTable extends Migration
      */
     public function up()
     {
-        Schema::create('slides', function (Blueprint $table) {
+        Schema::create('site_bloco_ums', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome_slide', 100);
-            $table->string('descricao_slide', 100);
-            $table->string('link_slide', 100);
+            $table->string('nome_blocoum', 255);
+            $table->text('descricao_blocoum');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateSlidesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('slides');
+        Schema::drop('site_bloco_ums');
     }
 }

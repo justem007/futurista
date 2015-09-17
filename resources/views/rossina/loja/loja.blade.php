@@ -1,7 +1,6 @@
 @extends('rossina.site.site')
 
 @section('store')
-
     <div class="container">
         <h1 class="f-primary-l c-default">Nossa Loja Online</h1>
         <div class="f-primary-l f-inner-page-header_title-add c-senary">Camisetas, Tecidos, Serviços de estamparia digital</div>
@@ -477,4 +476,4 @@
         </section>
 
     </div>
-@endsection
+    @endsection

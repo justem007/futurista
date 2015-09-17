@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Editar banner</h1>
+                        <h1 class="page-header">Editar menu</h1>
 
                         @if ($errors->any())
                             <ul class="alert">
@@ -21,29 +21,29 @@
                     <div class="col-lg-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                Painel administrativo do slide
+                                Painel administrativo do menu
                             </div>
                             <div class="panel-body">
 
-                                {!! Form::open(['route'=>['slide.update', $slides->id, 'method'=>'post']]) !!}
+                                {!! Form::open(['route'=>['menu.update', $menuModel->id, 'method'=>'post']]) !!}
 
                                 <div class="form-group">
-                                    {!! Form::label('nome_slide', 'Nome :') !!}
-                                    {!! Form::text('nome_slide', $slides->nome_slide, ['class'=>'form-control']) !!}
+                                    {!! Form::label('nome_menu', 'Nome :') !!}
+                                    {!! Form::text('nome_menu', $menuModel->nome_menu, ['class'=>'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('descricao_slide', 'Descrição :') !!}
-                                    {!! Form::text('descricao_slide', $slides->descricao_slide, ['class'=>'form-control']) !!}
+                                    {!! Form::label('descricao_menu', 'Descrição :') !!}
+                                    {!! Form::text('descricao_menu', $menuModel->descricao_menu, ['class'=>'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('link_slide', 'Link :') !!}
-                                    {!! Form::text('link_slide', $slides->link_slide, ['class'=>'form-control']) !!}
+                                    {!! Form::label('link_menu', 'Link :') !!}
+                                    {!! Form::text('link_menu', $menuModel->link_menu, ['class'=>'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::submit('Editar Banner',['class'=>'btn btn-primary']) !!}
+                                    {!! Form::submit('Editar menu',['class'=>'btn btn-primary']) !!}
                                 </div>
 
                                 {!! Form::close() !!}

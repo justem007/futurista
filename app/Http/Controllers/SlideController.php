@@ -2,7 +2,6 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Rossina\Http\Requests;
 use Rossina\Http\Requests\SlideRequest;
 use Rossina\Slide;
@@ -18,9 +17,9 @@ class SlideController extends Controller
 
     public function index()
     {
-        $slides = $this->slideModel->all();
+        $slideModel = $this->slideModel->all();
 
-        return view('painel.adm.slide.slide', compact('slides'));
+        return view('painel.adm.slide.slide', compact('slideModel'));
     }
 
     public function create()
@@ -32,18 +31,18 @@ class SlideController extends Controller
     {
         $input = $request->all();
 
-        $slides = $this->slideModel->fill($input);
+        $slideModel = $this->slideModel->fill($input);
 
-        $slides->save();
+        $slideModel->save();
 
         return redirect()->route('slide');
     }
 
     public function edit($id)
     {
-        $slideEditar = $this->slideModel->find($id);
+        $slides = $this->slideModel->find($id);
 
-        return view('painel.adm.slide.edit', compact('slideEditar'));
+        return view('painel.adm.slide.edit', compact('slides'));
     }
 
     public function update(SlideRequest $request, $id)

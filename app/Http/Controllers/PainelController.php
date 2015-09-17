@@ -2,7 +2,6 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Rossina\Http\Requests;
 
 class PainelController extends Controller

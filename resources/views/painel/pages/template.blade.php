@@ -38,16 +38,16 @@
     <link href="<% asset('bower_components/metisMenu/dist/metisMenu.min.css') %>" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="<% asset('/dist/css/timeline.css') %>" rel="stylesheet">
+    <link href="<% asset('dist/css/timeline.css') %>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<% asset('/dist/css/sb-admin-2.css') %>" rel="stylesheet">
+    <link href="<% asset('dist/css/sb-admin-2.css') %>" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="<% asset('/bower_components/morrisjs/morris.css') %>" rel="stylesheet">
+    <link href="<% asset('bower_components/morrisjs/morris.css') %>" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<% asset('/bower_components/font-awesome/css/font-awesome.min.css') %>" rel="stylesheet" type="text/css">
+    <link href="<% asset('bower_components/font-awesome/css/font-awesome.min.css') %>" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,18 +71,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{!! route('painel') !!}">Rossina Estamparia - Admin</a>
+                <a class="navbar-brand" href="#">Rossina Estamparia - Admin</a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="{!! route('painel') !!}">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-2x"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="{!! route('painel') !!}">
+                            <a href="#">
                                 <div>
                                     <strong>John Smith</strong>
                                     <span class="pull-right text-muted">
@@ -106,7 +106,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{!! route('painel') !!}">
+                            <a href="#">
                                 <div>
                                     <strong>John Smith</strong>
                                     <span class="pull-right text-muted">
@@ -300,10 +300,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-dashboard fa-2x"></i> Administrador</a>
+                            <a href="{!! route('painel') !!}"><i class="fa fa-dashboard fa-2x"></i> Administrador</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-shopping-cart fa-2x"></i> Pedidos - Loja</a>
+                            <a href="#"><i class="fa fa-shopping-cart fa-2x"></i> Pedidos - Loja</a>
                         </li>
                         <li>
                         <a href="#"><i class="fa fa-truck fa-2x"></i> Estoque<span class="fa arrow"></span></a>
@@ -320,31 +320,34 @@
                             <a href="{!! route('categorias') !!}"><i class="fa fa-bars fa-2x"></i> Categorias</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-eye fa-2x"></i> Estamparia Digital</a>
+                            <a href="{!! route('menu') !!}"><i class="fa fa-bars fa-2x"></i> Menu</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-male fa-2x"></i> Produtos - Camisetas</a>
+                            <a href="#"><i class="fa fa-eye fa-2x"></i> Estamparia Digital</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-picture-o fa-2x"></i> Produtos - Tecidos</a>
+                            <a href="#"><i class="fa fa-male fa-2x"></i> Produtos - Camisetas</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-rocket fa-2x"></i> Blog</a>
+                            <a href="#"><i class="fa fa-picture-o fa-2x"></i> Produtos - Tecidos</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-tag fa-2x"></i> FQAs</a>
+                            <a href="#"><i class="fa fa-rocket fa-2x"></i> Blog</a>
                         </li>
                         <li>
-                            <a href="slide"><i class="fa fa-file-image-o fa-2x"></i> Slide - Banner</a>
+                            <a href="#"><i class="fa fa-tag fa-2x"></i> FQAs</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-tasks fa-2x"></i> Sobre nós</a>
+                            <a href="#"><i class="fa fa-file-image-o fa-2x"></i> Slide - Banner</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-group fa-2x"></i> Usuários - Administradores</a>
+                            <a href="#"><i class="fa fa-tasks fa-2x"></i> Sobre nós</a>
                         </li>
                         <li>
-                            <a href="painel"><i class="fa fa-user fa-2x"></i> Usuários - Clientes</a>
+                            <a href="#"><i class="fa fa-group fa-2x"></i> Usuários - Administradores</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-2x"></i> Usuários - Clientes</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-2x"></i> Gráficos<span class="fa arrow"></span></a>
@@ -463,6 +466,10 @@
 
         @yield('slide')
 
+        @yield('imagem')
+
+        @yield('menu')
+
 
         </div>
     </div>
@@ -470,25 +477,25 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="<% asset('/bower_components/jquery/dist/jquery.min.js') %>"></script>
+    <script src="<% asset('bower_components/jquery/dist/jquery.min.js') %>"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<% asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') %>"></script>
+    <script src="<% asset('bower_components/bootstrap/dist/js/bootstrap.min.js') %>"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<% asset('/bower_components/metisMenu/dist/metisMenu.min.js') %>"></script>
+    <script src="<% asset('bower_components/metisMenu/dist/metisMenu.min.js') %>"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="<% asset('/bower_components/raphael/raphael-min.js') %>"></script>
-    <script src="<% asset('/bower_components/morrisjs/morris.min.js') %>"></script>
-    <script src="<% asset('/js/morris-data.js') %>"></script>
+    <script src="<% asset('bower_components/raphael/raphael-min.js') %>"></script>
+    <script src="<% asset('bower_components/morrisjs/morris.min.js') %>"></script>
+    <script src="<% asset('js/morris-data.js') %>"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="<% asset('/bower_components/datatables/media/js/jquery.dataTables.min.js') %>"></script>
-    <script src="<% asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') %>"></script>
+    <script src="<% asset('bower_components/datatables/media/js/jquery.dataTables.min.js') %>"></script>
+    <script src="<% asset('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') %>"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<% asset('/dist/js/sb-admin-2.js') %>"></script>
+    <script src="<% asset('dist/js/sb-admin-2.js') %>"></script>
 
     <script>
         // tooltip demo

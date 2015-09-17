@@ -2,7 +2,9 @@
 
 namespace Rossina\Http\Requests;
 
-class SlideRequest extends Request
+use Rossina\Http\Requests\Request;
+
+class MenuRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +24,9 @@ class SlideRequest extends Request
     public function rules()
     {
         return [
-            'nome_slide'       => 'required|max:100',
-            'descricao_slide'  => 'required|max:100',
-            'link_slide'       => 'required|max:100'
+            'nome_menu' => 'required|max:100',
+            'descricao_menu' => 'required|max:200',
+            'link_menu' => 'required|max:80'
         ];
     }
 }
