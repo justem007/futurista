@@ -6,14 +6,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Categorias plataforma</h1>
-                        <p><a href="{!! route('categoriascriar') !!}"> <button type="button" class="btn btn-danger btn-block">Adicionar nova categoria</button></p></a>
+                        <h1 class="page-header">BlocoUm plataforma</h1>
+                        <p><a href="{!! route('blocoumcriar') !!}"> <button type="button" class="btn btn-danger btn-block">Adicionar novo bloco</button></p></a>
                     </div>
                     <!-- /.col-lg-4 -->
                     <div class="col-lg-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                Painel administrativo das categorias
+                                Painel administrativo do Bloco Um
                             </div>
                             <div class="panel-body">
 
@@ -30,13 +30,13 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($categoriaModel as $categoria)
+                                                    @foreach($blocoumModel as $blocoum)
                                                     <tr>
-                                                        <td>{{ $categoria->id }}</td>
-                                                        <td>{{ $categoria->nome_categoria }}</td>
-                                                        <td>{{ $categoria->descricao_categoria }}</td>
-                                                        <td><a href="{!! route('categoria.edit',['id'=>$categoria->id]) !!}"> Editar</a> |
-                                                            <a href="{!! route('categoria.destroy',['id'=>$categoria->id]) !!}">Destroy</a></td>
+                                                        <td>{{ $blocoum->id }}</td>
+                                                        <td>{{ $blocoum->nome_blocoum }}</td>
+                                                        <td>{{ $blocoum->descricao_blocoum }}</td>
+                                                        <td><a href="{!! route('blocoum.edit',['id'=>$blocoum->id]) !!}"> Editar</a> |
+                                                            <a href="{!! route('blocoum.destroy',['id'=>$blocoum->id]) !!}">Destroy</a></td>
                                                     </tr>
                                                     @endforeach
                                                     </tbody>

@@ -2,8 +2,6 @@
 
 namespace Rossina\Http\Requests;
 
-use Rossina\Http\Requests\Request;
-
 class SiteBlocoUmRequest extends Request
 {
     /**

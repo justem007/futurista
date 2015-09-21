@@ -33,12 +33,12 @@
                                                     <tbody>
                                                     @foreach($menuModel as $menu)
                                                     <tr>
-                                                        <td><% $menu->id %></td>
-                                                        <td><% $menu->nome_menu %></td>
-                                                        <td><% $menu->descricao_menu %></td>
-                                                        <td><% $menu->link_menu %></td>
-                                                        <td><a href="<% route('menu.edit',['id'=>$menu->id]) %>"> Editar</a> |
-                                                            <a href="<% route('menu.destroy',['id'=>$menu->id]) %>">Destroy</a></td>
+                                                        <td>{{ $menu->id }}</td>
+                                                        <td>{{ $menu->nome_menu }}</td>
+                                                        <td>{{ $menu->descricao_menu }}</td>
+                                                        <td>{{ $menu->link_menu }}</td>
+                                                        <td><a href="{!! route('menu.edit',['id'=>$menu->id]) !!}"> Editar</a> |
+                                                            <a href="{!! route('menu.destroy',['id'=>$menu->id]) !!}">Destroy</a></td>
                                                     </tr>
                                                     @endforeach
                                                     </tbody>

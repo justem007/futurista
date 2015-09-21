@@ -80,11 +80,11 @@ Route::group(['prefix' => 'admin', 'where'=>['id'=>'[0-9]+']], function(){
     });
 
     Route::group(['prefix' => 'blocoum'], function(){
-            Route::get('', ['as' => 'blocoum', 'uses' => 'BlocoUmController@index']);
-            Route::get('blocoumucriar', ['as' => 'blocoumcriar', 'uses' => 'BlocoUmController@create']);
-            Route::post('', ['as' => 'blocoum.store', 'uses' => 'BlocoUmController@store']);
-            Route::get('{id}/edit', ['as' => 'blocoum.edit', 'uses' => 'BlocoUmController@edit']);
-            Route::post('{id}/update', ['as' => 'blocoum.update', 'uses' => 'BlocoUmController@update']);
-            Route::get('{id}/destroy', ['as' => 'blocoum.destroy', 'uses' => 'BlocoUmController@destroy']);
+            Route::get('', ['as' => 'blocoum', 'uses' => 'SiteBlocoUmController@index']);
+            Route::get('blocoumcriar', ['as' => 'blocoumcriar', 'uses' => 'SiteBlocoUmController@create']);
+            Route::post('', ['as' => 'blocoum.store', 'uses' => 'SiteBlocoUmController@store']);
+            Route::get('{id}/edit', ['as' => 'blocoum.edit', 'uses' => 'SiteBlocoUmController@edit']);
+            Route::post('{id}/update', ['as' => 'blocoum.update', 'uses' => 'SiteBlocoUmController@update']);
+            Route::get('{id}/destroy', ['as' => 'blocoum.destroy', 'uses' => 'SiteBlocoUmController@destroy']);
     });
 });

@@ -34,13 +34,13 @@
                                                     <tbody>
                                                     @foreach($slideModel as $slide)
                                                     <tr>
-                                                        <td><% $slide->id %></td>
-                                                        <td><% $slide->nome_slide %></td>
-                                                        <td><% $slide->descricao_slide %></td>
-                                                        <td><% $slide->link_slide %></td>
+                                                        <td>{{ $slide->id              }}</td>
+                                                        <td>{{ $slide->nome_slide      }}</td>
+                                                        <td>{{ $slide->descricao_slide }}</td>
+                                                        <td>{{ $slide->link_slide      }}</td>
                                                         <td>Imagem</td>
-                                                        <td><a href="<% route('slide.edit',['id'=>$slide->id]) %>"> Editar</a> |
-                                                            <a href="<% route('slide.destroy',['id'=>$slide->id]) %>">Destroy |</a></td>
+                                                        <td><a href="{!! route('slide.edit',['id'=>$slide->id])    !!}"> Editar</a> |
+                                                            <a href="{!! route('slide.destroy',['id'=>$slide->id]) !!}">Destroy |</a></td>
                                                     </tr>
                                                     @endforeach
                                                     </tbody>

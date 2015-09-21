@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Editar menu</h1>
+                        <h1 class="page-header">Adicionar novo bloco</h1>
 
                         @if ($errors->any())
                             <ul class="alert">
@@ -21,29 +21,25 @@
                     <div class="col-lg-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                Painel administrativo do menu
+                                Painel administrativo do Bloco Um
                             </div>
                             <div class="panel-body">
 
-                                {!! Form::open(['route'=>['menu.update', $menuModel->id, 'method'=>'post']]) !!}
+                                {!! Form::open(['url'=>'admin/blocoum']) !!}
 
                                 <div class="form-group">
-                                    {!! Form::label('nome_menu', 'Nome :') !!}
-                                    {!! Form::text('nome_menu', $menuModel->nome_menu, ['class'=>'form-control']) !!}
+                                    {!! Form::label('nome_blocoum', 'Nome :') !!}
+                                    {!! Form::text('nome_blocoum', null, ['class'=>'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('descricao_menu', 'Descrição :') !!}
-                                    {!! Form::text('descricao_menu', $menuModel->descricao_menu, ['class'=>'form-control']) !!}
+                                    {!! Form::label('descricao_blocoum', 'Description :') !!}
+                                    {!! Form::text('descricao_blocoum', null, ['class'=>'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('link_menu', 'Link :') !!}
-                                    {!! Form::text('link_menu', $menuModel->link_menu, ['class'=>'form-control']) !!}
-                                </div>
-
-                                <div class="form-group">
-                                    {!! Form::submit('Editar menu',['class'=>'btn btn-primary']) !!}
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    {!! Form::submit('Adicionar bloco',['class'=>'btn btn-primary']) !!}
                                 </div>
 
                                 {!! Form::close() !!}

@@ -11,7 +11,7 @@
                         @if ($errors->any())
                             <ul class="alert">
                                 @foreach($errors->all() as $error)
-                                    <li><% $error %></li>
+                                    <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
                         @endif
@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="hidden" name="_token" value="<% csrf_token() %>">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     {!! Form::submit('Adicionar categoria',['class'=>'btn btn-primary']) !!}
                                 </div>
 

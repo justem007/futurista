@@ -86,10 +86,10 @@
                     </li>
                     @foreach($modelMenu as $menu)
                         <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
-                            <a href="<% route('$menu->link_menu') %>"><i class="fa fa-folder-open b-menu-1level-ico"></i><% $menu->nome_menu %><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                            <a href="{!! route('$menu->link_menu') !!}"><i class="fa fa-folder-open b-menu-1level-ico"></i>{{ $menu->nome_menu }}<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                             <div class="b-top-nav__dropdomn">
                                 <ul class="b-top-nav__2level_wrap">
-                                    <li class="b-top-nav__2level_title f-top-nav__2level_title"><% $menu->descricao_menu %></li>
+                                    <li class="b-top-nav__2level_title f-top-nav__2level_title">{{ $menu->descricao_menu }}</li>
                                 </ul>
                             </div>
                         </li>
