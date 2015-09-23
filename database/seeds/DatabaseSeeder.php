@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
 //         $this->call(CategoriasTableSeeder::class);
 //         $this->call(MenuTableSeeder::class);
 //         $this->call(SiteBlocoUmTableSeeder::class);
+//         $this->call(TituloBlocoTableSeeder::class);
+         $this->call(FerramentaBlocoTableSeeder::class);
 
         Model::reguard();
     }

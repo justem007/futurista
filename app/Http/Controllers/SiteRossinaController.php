@@ -2,22 +2,29 @@
 
 namespace Rossina\Http\Controllers;
 
+use Rossina\FerramentasBloco;
 use Rossina\Http\Requests;
 use Rossina\Menu;
 use Rossina\SiteBlocoUm;
 use Rossina\Slide;
+use Rossina\TituloBloco;
 
 class SiteRossinaController extends Controller
 {
     private $modelSlide;
     private $modelMenu;
     private $blocoumModel;
+    private $tituloBloco;
+    private $ferModel;
 
-    public function __construct(Slide $modelSlide, Menu $modelMenu, SiteBlocoUm $blocoumModel)
+    public function __construct(Slide $modelSlide, Menu $modelMenu, SiteBlocoUm $blocoumModel, TituloBloco $tituloBloco,
+                                FerramentasBloco $ferModel)
     {
         $this->modelSlide = $modelSlide;
         $this->modelMenu = $modelMenu;
         $this->blocoumModel = $blocoumModel;
+        $this->tituloBloco = $tituloBloco;
+        $this->ferModel = $ferModel;
     }
 
     public function index()
@@ -25,8 +32,10 @@ class SiteRossinaController extends Controller
         $modelSlide   = $this->modelSlide->all();
         $modelMenu    = $this->modelMenu->all();
         $blocoumModel = $this->blocoumModel->all();
+        $tituloBloco = $this->tituloBloco->all();
+        $ferModel = $this->ferModel->all();
 
-        return view('rossina.site.index', compact('modelSlide', 'modelMenu', 'blocoumModel'));
+        return view('rossina.site.index', compact('modelSlide', 'modelMenu', 'blocoumModel', 'tituloBloco', 'ferModel'));
     }
 
     public function loja()

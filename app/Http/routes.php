@@ -79,6 +79,24 @@ Route::group(['prefix' => 'admin', 'where'=>['id'=>'[0-9]+']], function(){
         Route::get('{id}/destroy', ['as' => 'menu.destroy', 'uses' => 'MenuController@destroy']);
     });
 
+    Route::group(['prefix' => 'tituloum'], function(){
+        Route::get('', ['as' => 'blocoum', 'uses' => 'SiteBlocoUmController@index']);
+        Route::get('tituloumcriar', ['as' => 'tituloumcriar', 'uses' => 'SiteBlocoUmController@createTitulo']);
+        Route::post('', ['as' => 'tituloum.store', 'uses' => 'SiteBlocoUmController@storeTitulo']);
+        Route::get('{id}/edit', ['as' => 'tituloum.edit', 'uses' => 'SiteBlocoUmController@editTitulo']);
+        Route::post('{id}/update', ['as' => 'tituloum.update', 'uses' => 'SiteBlocoUmController@updateTitulo']);
+        Route::get('{id}/destroy', ['as' => 'tituloum.destroy', 'uses' => 'SiteBlocoUmController@destroyTitulo']);
+    });
+
+    Route::group(['prefix' => 'ferramenta'], function(){
+        Route::get('', ['as' => 'blocoum', 'uses' => 'SiteBlocoUmController@index']);
+        Route::get('ferramentacriar', ['as' => 'ferramentacriar', 'uses' => 'SiteBlocoUmController@createFerramenta']);
+        Route::post('', ['as' => 'ferramenta.store', 'uses' => 'SiteBlocoUmController@storeFerramenta']);
+        Route::get('{id}/edit', ['as' => 'ferramenta.edit', 'uses' => 'SiteBlocoUmController@editFerramenta']);
+        Route::post('{id}/update', ['as' => 'ferramenta.update', 'uses' => 'SiteBlocoUmController@updateferramenta']);
+        Route::get('{id}/destroy', ['as' => 'ferramenta.destroy', 'uses' => 'SiteBlocoUmController@destroyFerramenta']);
+    });
+
     Route::group(['prefix' => 'blocoum'], function(){
             Route::get('', ['as' => 'blocoum', 'uses' => 'SiteBlocoUmController@index']);
             Route::get('blocoumcriar', ['as' => 'blocoumcriar', 'uses' => 'SiteBlocoUmController@create']);
